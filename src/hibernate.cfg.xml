@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/baidu?useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">2</property>
+
+        <!-- hibernate方言：告诉hibernate去到什么地方就说什么话 
+                                根据不同的数据库生成对应的sql语句
+                                去到oracle说oracle的sql语句
+             -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect </property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <!-- 根据映射文件生成表：正向工程：根据xml创建表，反向工程 -->
+       <!--  create:创建表、update:修改表 -->
+        <property name="hbm2ddl.auto">update</property>
+        <!-- 映射文件的注册 -->
+        <mapping resource="com/xsp/stu/entity/User.hbm.xml"/>
+       
+    </session-factory>
+
+</hibernate-configuration>
+

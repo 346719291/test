@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+        SYSTEM
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+
+    <class name="com.xsp.stu.entity.User" table="user">
+    <!-- 主键映射 -->
+        <id name="id" column="id" type="int">
+    <!--     主键生成策略 -->
+            <generator class="increment"/>
+        </id>
+    <!-- 属性映射 -->
+        <property name="su_name" column="su_name" type="string"/>
+       <!--  <property name="password" column="password" type="string"/> -->
+   <!--  关联映射配置 -->
+   
+   <!--    缓存配置 -->
+    </class>
+
+</hibernate-mapping>
